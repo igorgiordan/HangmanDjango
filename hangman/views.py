@@ -37,7 +37,7 @@ class CreateMatch(ListView):
                 palavraObj = models.Word.objects.get(id = id_selecionado)
                 criacao = models.Match.objects.create(user_id=self.request.user.pk, word=palavraObj, status=2)
                 criacao.save()
-                return HttpResponseRedirect('/')
+                return HttpResponseRedirect('/partida/')
             elif (partida_user.status == 2):
                 return HttpResponseRedirect('/')
         else:
@@ -50,8 +50,13 @@ class CreateMatch(ListView):
             palavraObj = models.Word.objects.get(id = id_selecionado)
             criacao = models.Match.objects.create(user_id=self.request.user.pk, word=palavraObj, status=2)
             criacao.save()
-            return HttpResponseRedirect('/')
+            return HttpResponseRedirect('/partida/')
 
 class GameMatch(ListView):
     model = models.Match
-    template_name = 'partida.html'
+    template_name = 'jogo.html'
+    def get_context_data(self, **kwargs):
+        kwargs['match'] = models.Match.objects.filter(user_id = self.request.user.pk)
+        return super(GameMatch, self).get_context_data(**kwargs)
+
+# class MatchEmAndamento(ListView):

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Forca</title>
+</head>
+<body>
+{%for x in object_list%}
+<div align='center'>
+    {%if x.errors == 0%}
+    <img src="https://github.com/igorgiordan/HangmanDjango/blob/master/images/1.png?raw=true">
+    {%elif x.errors == 1%}
+    <img src="https://github.com/igorgiordan/HangmanDjango/blob/master/images/2.png?raw=true">
+    {%elif x.errors == 2%}
+    <img src="https://github.com/igorgiordan/HangmanDjango/blob/master/images/3.png?raw=true">
+    {%elif x.errors == 3%}
+    <img src="https://github.com/igorgiordan/HangmanDjango/blob/master/images/4.png?raw=true">
+    {%elif x.errors == 4%}
+    <img src="https://github.com/igorgiordan/HangmanDjango/blob/master/images/5.png?raw=true">
+    {%elif x.errors == 5%}
+    <img src="https://github.com/igorgiordan/HangmanDjango/blob/master/images/6.png?raw=true">
+    {%elif x.errors == 6%}
+    <img src="https://github.com/igorgiordan/HangmanDjango/blob/master/images/7.png?raw=true">
+    {%endif%}
+</div>
+<h1>Dica: {{x.word.clue}}</h1>
+<div align='center'>
+<input type="submit" value="Q" />
+<input type="submit" value="W" />
+<input type="submit" value="E" />
+<input type="submit" value="R" />
+<input type="submit" value="T" />
+<input type="submit" value="Y" />
+<input type="submit" value="U" />
+<input type="submit" value="I" />
+<input type="submit" value="O" />
+<input type="submit" value="P" />
+<br>
+<H1></H1>
+<input type="submit" value="A" />
+<input type="submit" value="S" />
+<input type="submit" value="D" />
+<input type="submit" value="F" />
+<input type="submit" value="G" />
+<input type="submit" value="H" />
+<input type="submit" value="J" />
+<input type="submit" value="K" />
+<input type="submit" value="L" />
+<input type="submit" value="Ç" />
+<br>
+<h1></h1>
+<input type="submit" value="Z" />
+<input type="submit" value="X" />
+<input type="submit" value="C" />
+<input type="submit" value="V" />
+<input type="submit" value="B" />
+<input type="submit" value="N" />
+<input type="submit" value="M" />
+</div>
+{%endfor%}
+</body>
+</html>

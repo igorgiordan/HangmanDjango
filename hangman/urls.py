@@ -24,5 +24,6 @@ from . import views
 urlpatterns = [
     path('cadastro/', views.RegisterUser.as_view(), name="cadastro"),
     path('cadastropalavra/', views.RegisterWord.as_view(), name='cadastro-palavra'),
-    path('jogo/', views.CreateMatch.as_view(), name='cadastrar-partida')
+    path('jogo/', views.CreateMatch.as_view(), name='cadastrar-partida'),
+    path('partida/', views.GameMatch.as_view(), name='jogo')
 ]
